@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">The Elite Club</string>
+    <string name="title_activity_home">Home</string>
+    <string name="tab_text_1">PEOPLE</string>
+    <string name="tab_text_2">CHAT</string>
+    <string name="tab_text_3">PROFILE</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
