@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".EditProfile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:paddingTop="70dp"
+        android:paddingBottom="0dp"
+        app:srcCompat="@drawable/elite" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDIT PROFILE"
+            android:paddingLeft="120dp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            />
+    <EditText
+        android:id="@+id/editname"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+
+        android:hint="Name"
+        android:textColor="#000000"
+        android:textColorHint="#999598"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextemail"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:hint="Bio"
+        android:textColor="#000000"
+        android:textColorHint="#999598"
+        android:paddingLeft="10dp"
+        android:inputType="textShortMessage" />
+
+    <EditText
+        android:id="@+id/editTextpassword"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:layout_margin="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:hint="Interests"
+        android:textColorHint="#999598"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPassword" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_background"
+        android:layout_gravity="center"
+        android:text="Save" />
+    </LinearLayout>
+
+</RelativeLayout>

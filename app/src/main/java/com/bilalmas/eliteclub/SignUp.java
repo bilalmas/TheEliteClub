@@ -16,7 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class SignUp extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class SignUp extends AppCompatActivity {
     private EditText passwordfirst;
     private EditText confirmpassword;
     private FirebaseAuth mAuth;
+    private DatabaseReference Rootref;
     private ProgressBar progressBar;
 
     @Override
@@ -38,6 +40,7 @@ public class SignUp extends AppCompatActivity {
         confirmpassword = (EditText) findViewById(R.id.editTextconfirmpassword);
         progressBar = (ProgressBar) findViewById(R.id.progbar);
         mAuth = FirebaseAuth.getInstance();
+        Rootref = FirebaseDatabase.getInstance().getReference();
 
     }
     public void Signup(View view){
@@ -47,9 +50,14 @@ public class SignUp extends AppCompatActivity {
             String email = Emailaddr.getText().toString().trim();
             String password = passwordfirst.getText().toString().trim();
             String cpassword = confirmpassword.getText().toString().trim();
+            String name = Name.getText().toString().trim();
 
             if (TextUtils.isEmpty(email)) {
                 Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(name)) {
+                Toast.makeText(getApplicationContext(), "Enter your name!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -79,6 +87,9 @@ public class SignUp extends AppCompatActivity {
                                     Toast.makeText(SignUp.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
+
+                                    String currentuserID = mAuth.getCurrentUser().getUid();
+                                    Rootref.child("Users").child(currentuserID).setValue("");
                                     startActivity(new Intent(SignUp.this, MainActivity.class));
                                     finish();
                                 }
