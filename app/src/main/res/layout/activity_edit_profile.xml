@@ -27,8 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EDIT PROFILE"
-            android:paddingLeft="120dp"
+            android:ems="10"
             android:textStyle="bold"
+            android:layout_gravity="center"
             android:textSize="30sp"
             android:textAlignment="center"
             />
@@ -48,7 +49,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextemail"
+        android:id="@+id/editbio"
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:layout_margin="15dp"
@@ -62,7 +63,7 @@
         android:inputType="textShortMessage" />
 
     <EditText
-        android:id="@+id/editTextpassword"
+        android:id="@+id/editinterests"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -73,7 +74,7 @@
         android:hint="Interests"
         android:textColorHint="#999598"
         android:background="@drawable/edittext_background"
-        android:inputType="textPassword" />
+        android:inputType="textShortMessage" />
 
 
     <Button
@@ -83,6 +84,7 @@
         android:layout_margin="15dp"
         android:background="@drawable/button_background"
         android:layout_gravity="center"
+        android:onClick="Savedetails"
         android:text="Save" />
     </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.bilalmas.eliteclub;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class Home extends AppCompatActivity {
      * androidx.fragment.app.FragmentStatePagerAdapter.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private FirebaseAuth mAuth;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -47,6 +49,8 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home2);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -91,6 +95,12 @@ public class Home extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        if(id == R.id.Logout){
+
+            mAuth.signOut();
+            Intent intent = new Intent(getApplication(),MainActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

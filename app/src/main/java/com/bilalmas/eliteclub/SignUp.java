@@ -50,7 +50,7 @@ public class SignUp extends AppCompatActivity {
             String email = Emailaddr.getText().toString().trim();
             String password = passwordfirst.getText().toString().trim();
             String cpassword = confirmpassword.getText().toString().trim();
-            String name = Name.getText().toString().trim();
+            final String name = Name.getText().toString().trim();
 
             if (TextUtils.isEmpty(email)) {
                 Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -89,7 +89,10 @@ public class SignUp extends AppCompatActivity {
                                 } else {
 
                                     String currentuserID = mAuth.getCurrentUser().getUid();
-                                    Rootref.child("Users").child(currentuserID).setValue("");
+                                    Users User = new Users(name);
+                                    //Rootref.child("Users").push().setValue(currentuserID);
+                                    //Rootref.push().setValue(currentuserID);
+                                    Rootref.child("Users").child(currentuserID).setValue(User);
                                     startActivity(new Intent(SignUp.this, MainActivity.class));
                                     finish();
                                 }
