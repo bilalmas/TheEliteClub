@@ -14,6 +14,7 @@ public class Users {
         this.username = username;
         this.bio = "Edit to Add details";
         this.interests = "Edit to Add details";
+        this.image = "Empty";
 
     }
 
@@ -21,6 +22,7 @@ public class Users {
         this.username = username;
         this.bio = bio;
         this.interests = interests;
+        this.image = "Empty";
 
     }
 

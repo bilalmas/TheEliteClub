@@ -24,6 +24,7 @@
             android:textColor="#422EFF"
             android:layout_gravity="center"
             android:textAlignment="center"
+            android:onClick="changephoto"
             android:paddingTop="20dp"
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
