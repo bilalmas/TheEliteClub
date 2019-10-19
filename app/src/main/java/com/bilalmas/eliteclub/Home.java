@@ -100,6 +100,8 @@ public class Home extends AppCompatActivity {
 
             mAuth.signOut();
             Intent intent = new Intent(getApplication(),MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            //startActivity(loginIntent);
             startActivity(intent);
         }
 

@@ -151,7 +151,7 @@ public class FragmentProfile extends Fragment {
     private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds : dataSnapshot.getChildren()){
 
-            if(ds.child(userID)!=null) {
+            if(ds.child(userID).exists()) {
                 Users uInfo = new Users();
                 uInfo.setUsername(ds.child(userID).getValue(Users.class).getUsername()); //set the name
                 uInfo.setBio(ds.child(userID).getValue(Users.class).getBio()); //set the email
@@ -172,7 +172,7 @@ public class FragmentProfile extends Fragment {
                bio.setText(uInfo.getBio());
                interests.setText(uInfo.getInterests());
                if(uInfo.getImage()!="Empty"){
-                   Picasso.with(getContext()).load(uInfo.getImage()).into(profileimage);
+                   Picasso.with(getContext()).load(uInfo.getImage()).placeholder(R.drawable.profile_image).into(profileimage);
                }
 
             }
