@@ -4,7 +4,7 @@ An app that connects millionaires with millionaires. A prime networking app that
 Some screenshots of the User Interface :
 
 
-<img src="https://user-images.githubusercontent.com/49684325/85622372-35a07a00-b680-11ea-906c-9dec719db6ba.png" width="200" height="200" />
+<img src="https://user-images.githubusercontent.com/49684325/85622372-35a07a00-b680-11ea-906c-9dec719db6ba.png" width="300" height="800" />
 
 
 ![alt text](https://user-images.githubusercontent.com/49684325/85622415-3d601e80-b680-11ea-97ad-fdac2ee4ff42.png)<!-- .element height="50%" width="50%" -->
